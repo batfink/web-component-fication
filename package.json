@@ -1,0 +1,27 @@
+{
+  "name": "web-component-fication",
+  "version": "0.0.0",
+  "description": "Just fooling around with web components you know",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/batfink/web-component-fication"
+  },
+  "keywords": [
+    "web-components",
+    "gulp"
+  ],
+  "author": "Victor Nystad",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/batfink/web-component-fication/issues"
+  },
+  "devDependencies": {
+    "gulp-open": "~0.2.8",
+    "gulp-connect": "~2.0.6",
+    "gulp": "~3.8.7"
+  }
+}

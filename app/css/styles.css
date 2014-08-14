@@ -1,0 +1,12 @@
+body {
+  background: #efefef; color: #333;
+  font-family: HelveticaNeue
+}
+
+h1, h2, h3 { font-weight: normal }
+
+x-foo, x-foo-extended {
+  background: red;
+  width: 100px;
+  height: 100px;
+}
