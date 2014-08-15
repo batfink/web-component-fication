@@ -4,15 +4,74 @@
   <meta charset="UTF-8">
   <title>Untilted</title>
   <script src="lib/object-assign.js"></script>
-  <script src="js/custom-elements.js"></script>
+  <script src="js/mega-button.js"></script>
+  <script src="js/x-foo.js"></script>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="import" href="elements.html">
+
+  <script src="js/clock-face.js"></script>
+  <link rel="stylesheet" href="css/clock-face.css">
 
 </head>
 <body>
 
+  <h2>Custom element</h2>
+  <x-foo></x-foo>
+
+  <hr>
+
   <h2>Type extension custom element</h2>
   <p>Mega-button extender button. Tekst i konsollet ved klikk sendes inn i msg-attributtet.</p>
   <button is="mega-button" msg="tjobing!">Klikk meg</button>
+
+  <hr>
+
+  <h2>Template og shadow dom</h2>
+
+  <template id="sdtemplate">
+    <style>
+      p { color: orange }
+    </style>
+    <p>I’m in Shadow DOM. My markup was stamped from a template</p>
+  </template>
+
+  <script>
+    var proto = Object.create(HTMLElement.prototype, {
+      createdCallback: {
+        value: function() {
+          var t = document.querySelector('#sdtemplate');
+          var clone = document.importNode(t.content, true);
+          this.createShadowRoot().appendChild(clone)
+        }
+      }
+    });
+    document.registerElement('x-foo-from-template', { prototype: proto })
+  </script>
+
+  <x-foo-from-template></x-foo-from-template>
+
+
+  <hr>
+
+  <h2>From import</h2>
+
+  <say-hi name="Eric"></say-hi>
+
+  <shadow-element>
+    <div>I’m in the light dom</div>
+  </shadow-element>
+
+  <hr>
+
+  <h2>Custom element clock</h2>
+
+  <clock-face></clock-face>
+
+
+
+  <h3>With time set to 9:30:59</h3>
+
+  <clock-face hour="9" minute="30" second="0"></clock-face>
 
 </body>
 </html>

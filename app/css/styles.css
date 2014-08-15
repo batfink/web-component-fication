@@ -1,12 +1,23 @@
 body {
   background: #efefef; color: #333;
-  font-family: HelveticaNeue
+  font-family: HelveticaNeue;
+  margin: 2em 4%;
 }
 
 h1, h2, h3 { font-weight: normal }
 
-x-foo, x-foo-extended {
-  background: red;
+x-foo {
+  background: white;
+  border: 1px solid #666;
+  padding: .2rem;
   width: 100px;
   height: 100px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: silver;
+  margin: 2em 0;
+  clear: both;
 }
