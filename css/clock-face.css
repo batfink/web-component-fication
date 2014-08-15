@@ -3,6 +3,8 @@ clock-face {
   display: block;
   width: 300px;
   overflow: hidden;
+  /* margin: auto; */
+  outline: 1px solid white;
 }
 
 .clock-face-hours > div {
