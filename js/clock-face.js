@@ -72,18 +72,23 @@ http://developer.telerik.com/featured/web-components-ready-production/
     },
     updateClock: {
       value: function () {
-        var now = new Date(),
-            hour = (now.getHours() % 12) - 1,
-            minute = now.getMinutes() - 1 ,
-            second = now.getSeconds() - 1;
+        var now = new Date();
+
+        now.setHours(now.getHours() -1);
+        now.setMinutes(now.getMinutes() - 1);
+        now.setSeconds(now.getSeconds() - 1);
+
+        var hour = now.getHours() % 12,
+            minute = now.getMinutes(),
+            second = now.getSeconds();
 
         [].forEach.call(this.querySelectorAll('.active'), function (block) {
           block.classList.remove('active')
         })
 
-        this.hours[hour === -1 ? 11 : hour].classList.add('active');
-        this.minutes[minute === -1 ? 59 : minute].classList.add('active');
-        this.seconds[second === -1 ? 59 : second].classList.add('active');
+        this.hours[hour].classList.add('active');
+        this.minutes[minute].classList.add('active');
+        this.seconds[second].classList.add('active');
 
       }
     }
