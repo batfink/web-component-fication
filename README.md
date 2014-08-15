@@ -1,7 +1,7 @@
 web-component-fication
 ======================
 
-Learn me some web components for much good (and world peace)
+Learn me some web components for much good (and world peace).
 
 Web components works in Chrome 36. Polyfills exists for other browsers but are not included in this repo.
 
