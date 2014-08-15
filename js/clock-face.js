@@ -93,15 +93,17 @@ http://developer.telerik.com/featured/web-components-ready-production/
     updateClock: {
       value: function () {
         var now = new Date(),
-            hour = (this.hour || now.getHours()) - 1,
+            hour = ((this.hour || now.getHours()) - 1) % 12,
             minute = (this.minute || now.getMinutes()) - 1,
             second = (this.second || now.getSeconds()) - 1;
+
+            console.log(hour);
 
         [].forEach.call(this.querySelectorAll('.active'), function (block) {
           block.classList.remove('active')
         })
 
-        this.hours[hour - 1].classList.add('active');
+        this.hours[hour === -1 ? 11 : hour].classList.add('active');
         this.minutes[minute === -1 ? 59 : minute].classList.add('active');
         this.seconds[second === -1 ? 59 : second].classList.add('active');
 
