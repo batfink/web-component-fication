@@ -101,7 +101,7 @@ http://developer.telerik.com/featured/web-components-ready-production/
           block.classList.remove('active')
         })
 
-        this.hours[hour === -1 ? 11 : hour].classList.add('active');
+        this.hours[hour - 1].classList.add('active');
         this.minutes[minute === -1 ? 59 : minute].classList.add('active');
         this.seconds[second === -1 ? 59 : second].classList.add('active');
 
