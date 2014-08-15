@@ -22,8 +22,8 @@ clock-face {
 }
 
 .clock-face-seconds > div {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   background: #000;
   float:left;
   outline: 1px solid white;
